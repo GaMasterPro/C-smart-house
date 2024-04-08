@@ -1,0 +1,19 @@
+CREATE TABLE TemperatureData (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Sensor VARCHAR(50) NOT NULL,
+    Temperature INT NOT NULL,
+    Timestamp DATETIME NOT NULL
+);
+
+CREATE TABLE DeviceStatus (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Device VARCHAR(50) NOT NULL,
+    Status INT NOT NULL,
+    Timestamp DATETIME NOT NULL
+);
+
+CREATE TABLE DamageTable (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    DamageIndicator INT NOT NULL,
+    Timestamp DATETIME NOT NULL
+);
