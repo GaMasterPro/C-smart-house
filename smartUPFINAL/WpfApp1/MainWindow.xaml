@@ -1,0 +1,43 @@
+﻿<Window x:Class="SmartHouseControlPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Smart House Control Panel" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\armen\OneDrive\Рабочий стол\bankai.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- StackPanel for temperature controls -->
+        <StackPanel Grid.Column="0" Margin="20">
+            <TextBlock Text="Water Temperature:" />
+            <TextBox x:Name="txtWaterTemp" Width="100" />
+            <TextBlock Text="Air Temperature:" Margin="0 10 0 10" />
+            <TextBox x:Name="txtAirTemp" Width="100" />
+            <TextBlock Text="Sauna Temperature:" Margin="0 10 0 10" />
+            <TextBox x:Name="txtSaunaTemp" Width="100" />
+            <Button Content="Submit" Click="SubmitTemperatures_Click" Margin="0 20 0 0" />
+        </StackPanel>
+
+        <!-- StackPanel for control buttons -->
+        <StackPanel Grid.Column="1" Margin="20,20,20,276">
+            <Button Content="Turn On Cameras" Click="TurnOnCameras_Click" Margin="0 0 0 10" Background="#FFDDDDDD" />
+            <Button Content="Open Gate" Click="OpenGate_Click" Margin="0 0 0 10" />
+            <Button Content="Turn On Coffee Machine" Click="TurnOnCoffeeMachine_Click" Margin="0 0 0 10" />
+            <Button Content="Turn On Lights" Click="TurnOnLights_Click" Margin="0 0 0 10" Height="21" />
+        </StackPanel>
+
+        <!-- TextBlocks for temperature and time display -->
+        <TextBlock x:Name="txtOutsideTemperature" Grid.Column="1" Margin="0,163,10,-9"
+                   Text="Outside Temperature: 30°C" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="recTemperature" Grid.Column="1" Margin="0,200,10,10"
+                   Text="Recommended Temperature: 30°C" FontWeight="Bold" FontSize="16"/>
+        <TextBlock x:Name="txtTime" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,20,20,0"
+                   FontSize="16" FontWeight="Bold" Foreground="White"/>
+        <MediaElement x:Name="mediaElement" Grid.Column="0" Margin="20,0,0,20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="300" Height="200" LoadedBehavior="Manual"/>
+
+    </Grid>
+</Window>
